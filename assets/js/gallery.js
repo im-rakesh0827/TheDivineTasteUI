@@ -9,7 +9,7 @@ async function loadGallery() {
     return;
   }
 
-  const apiUrl = "http://localhost:5089/api/About/allGallery"; 
+  const apiUrl = `${CONFIG.BASE_URL}/api/About/allGallery`; 
 
   try {
     const res = await fetch(apiUrl);

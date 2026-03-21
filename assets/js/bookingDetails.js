@@ -127,7 +127,8 @@ function toggleSaveButton() {
 ========================= */
 
 function loadBookings() {
-    fetch("http://localhost:5089/api/Booking/allBooking")
+    // fetch("http://localhost:5089/api/Booking/allBooking")
+    fetch(`${CONFIG.BASE_URL}/api/Booking/allBooking`)
 
         .then(response => response.json())
 

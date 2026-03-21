@@ -3,8 +3,7 @@
 // ----------------------
 async function loadInfo() {
     try {
-        const response = await fetch("http://localhost:5089/api/About/aboutInfo");
-        
+        const response = await fetch(`${CONFIG.BASE_URL}/api/About/aboutInfo`);
         if (!response.ok) {
             console.error("API Error:", response.status);
             return;
@@ -37,8 +36,7 @@ loadInfo();
 // ----------------------
 async function loadWhyUs() {
     try {
-        const response = await fetch("http://localhost:5089/api/About/aboutUs");
-
+        const response = await fetch(`${CONFIG.BASE_URL}/api/About/aboutUs`);
         if (!response.ok) {
             console.error("API Error:", response.status);
             return;

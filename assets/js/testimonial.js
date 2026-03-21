@@ -10,7 +10,8 @@ async function loadTestimonials() {
         return;
     }
 
-    const apiUrl = "http://localhost:5089/api/About/allTestimonials";
+    
+    const apiUrl = `${CONFIG.BASE_URL}/api/About/allTestimonials`;
 
     try {
         const res = await fetch(apiUrl);

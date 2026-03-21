@@ -286,8 +286,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function loadMenu() {
-    try {
-        const response = await fetch("http://localhost:5089/api/Menu/getMenu");
+  try {
+      
+        const response = await fetch(`${CONFIG.BASE_URL}/api/Menu/getMenu`);
         const menuItems = await response.json();
 
         const container = document.getElementById("menuContainer");

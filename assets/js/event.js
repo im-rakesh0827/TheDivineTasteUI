@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadEvents() {
   try {
-    const response = await fetch("http://localhost:5089/api/Event/getAllEvents");
+    const response = await fetch(`${CONFIG.BASE_URL}/api/Event/getAllEvents`);
 
     if (!response.ok) {
       throw new Error("Failed to load events");

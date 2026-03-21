@@ -1,6 +1,7 @@
 async function loadSpecials() {
     try {
-        const response = await fetch("http://localhost:5089/api/Menu/getSpecialMenu");
+        
+        const response = await fetch(`${CONFIG.BASE_URL}/api/Menu/getSpecialMenu`);
 
         if (!response.ok) {
             console.error("API returned error:", response.status);

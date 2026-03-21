@@ -15,8 +15,7 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
     try {
         await new Promise(resolve => setTimeout(resolve, 1500));
-
-        const response = await fetch("http://localhost:5089/api/Booking/bookTable", {
+        const response = await fetch(`${CONFIG.BASE_URL}/api/Booking/bookTable`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(bookingData)

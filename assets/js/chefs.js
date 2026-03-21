@@ -1,6 +1,6 @@
 async function loadChefs() {
     try {
-        const response = await fetch("http://localhost:5089/api/About/allChefs");
+      const response = await fetch(`${CONFIG.BASE_URL}/api/About/allChefs`);
         const chefs = await response.json();
 
         const container = document.getElementById("chefsContainer");

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let response;
 
             try {
-                response = await fetch("http://localhost:5089/api/booking/send", {
+                response = await fetch(`${CONFIG.BASE_URL}/api/booking/send`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(contactData)
