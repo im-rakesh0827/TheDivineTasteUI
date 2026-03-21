@@ -382,3 +382,48 @@ $(document).ready(function () {
   $("#contactDetails").load("assets/page/contact.html");
   $("#eventsDetails").load("assets/page/event.html"); 
 });
+
+
+$(document).ready(function () {
+    $("#header-placeholder").load("header.html", function () {
+
+        // 👉 RUN NAV SCRIPT AFTER HEADER LOAD
+        initNavbarActive();
+    });
+});
+
+function initNavbarActive() {
+
+    const navLinks = document.querySelectorAll("#navbar .nav-link");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        const sections = document.querySelectorAll("section");
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.clientHeight;
+
+            if (window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    });
+}
