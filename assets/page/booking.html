@@ -1,0 +1,61 @@
+<section id="booking" class="booking">
+     <div class="container">
+
+          <div class="section-title">
+               <h2>Booking Details</h2>
+               <p>Approve or Reject Booking Requests</p>
+          </div>
+
+          <!-- Filters + Bulk Actions -->
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+
+               <!-- Status Filter -->
+               <div>
+                    <label class="me-2 fw-bold text-white">Filter Status:</label>
+
+                    <select id="statusFilter" class="form-select form-select-sm d-inline-block w-auto">
+                         <option value="All" selected>All</option>
+                         <option value="0">Pending</option>
+                         <option value="1">Approved</option>
+                         <option value="2">Rejected</option>
+                    </select>
+               </div>
+
+               <!-- Bulk Actions -->
+               <div>
+                    <button id="updateStatus" class="btn btn-success btn-sm" disabled>
+                         SUBMIT
+                    </button>
+               </div>
+
+          </div>
+
+          <div class="table-responsive">
+
+               <table id="bookingTable" class="table table-bordered table-dark table-hover">
+
+                    <thead>
+                         <tr>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Phone</th>
+                              <th>Date</th>
+                              <th>Time</th>
+                              <th>People</th>
+                              <th>Message</th>
+                              <th>Note</th>
+                              <th>Approve <input type="checkbox" id="selectApproveAll"></th>
+                              <th>Reject <input type="checkbox" id="selectRejectAll"></th>
+                         </tr>
+                    </thead>
+                    <tbody id="bookingBody">
+                    </tbody>
+
+               </table>
+
+          </div>
+
+     </div>
+</section>
+
+<script src="assets/js/bookingDetails.js"></script>
